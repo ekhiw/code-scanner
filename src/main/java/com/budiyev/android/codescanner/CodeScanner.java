@@ -751,7 +751,7 @@ public final class CodeScanner {
             }
             decoder.decode(new DecodeTask(data, decoderWrapper.getImageSize(),
                     decoderWrapper.getPreviewSize(), decoderWrapper.getViewSize(), frameRect,
-                    decoderWrapper.getDisplayOrientation(),
+                    90,
                     decoderWrapper.shouldReverseHorizontal()));
         }
     }
@@ -889,7 +889,7 @@ public final class CodeScanner {
             Utils.configureSceneMode(parameters);
             Utils.configureVideoStabilization(parameters);
             camera.setParameters(parameters);
-            camera.setDisplayOrientation(orientation);
+//            camera.setDisplayOrientation(orientation);
             synchronized (mInitializeLock) {
                 final Decoder decoder =
                         new Decoder(mDecoderStateListener, mFormats, mDecodeCallback);
